@@ -1,3 +1,5 @@
+import {Const} from "./Const.ts";
+
 export interface CircuitLayout {
     size: number;
     nands: number[];
@@ -6,7 +8,9 @@ export interface CircuitLayout {
 
 export type DeviceDescription =
     DebugReaderDesc |
-    ClockDesc;
+    ClockDesc |
+    ConstDesc |
+    StepDesc;
 
 export interface DebugReaderDesc {
     type: "DEBUG_READER";
@@ -18,6 +22,19 @@ export interface ClockDesc {
     period: number;
     duty: number;
     offset: number;
+    node: number;
+}
+
+export interface ConstDesc {
+    type: "CONST";
+    value: boolean;
+    node: number;
+}
+
+export interface StepDesc {
+    type: "STEP";
+    initial: boolean;
+    time: number;
     node: number;
 }
 

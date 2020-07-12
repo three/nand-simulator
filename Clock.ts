@@ -1,6 +1,9 @@
 import {Circuit} from "./Circuit.ts";
 import {ClockDesc} from "./types.ts";
 
+/**
+ * Overrides the value of `node` to a clock with the given parameters
+ */
 export class Clock {
     circuit: Circuit;
     period: number;

@@ -1,6 +1,9 @@
 import { Circuit } from "./Circuit.ts";
 import {DebugReaderDesc, Device} from "./types.ts";
 
+/**
+ * Print the final of a set of nodes after each tick
+ */
 export class DebugReader {
     circuit: Circuit;
     nodes: number[];

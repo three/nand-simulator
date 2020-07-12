@@ -4,8 +4,12 @@ import {
 } from "./types.ts";
 import {DebugReader} from "./DebugReader.ts";
 import {Clock} from "./Clock.ts";
-import {range} from "./helpers.ts";
+import {Const} from "./Const.ts";
+import {Step} from "./Step.ts";
 
+/**
+ * Create a simulation of NAND gates, with some special devices
+ */
 export class Circuit {
     bufferLength: number;
     devices: Device[];
@@ -38,9 +42,13 @@ export class Circuit {
         this.devices = []
         for (let device of layout.devices) {
             if (device.type === "CLOCK") {
-                this.devices.push(new Clock(this, device))
+                this.devices.push(new Clock(this, device));
             } else if (device.type === "DEBUG_READER") {
-                this.devices.push(new DebugReader(this, device))
+                this.devices.push(new DebugReader(this, device));
+            } else if (device.type === "CONST") {
+                this.devices.push(new Const(this, device));
+            } else if (device.type === "STEP") {
+                this.devices.push(new Step(this, device))
             }
         }
 
