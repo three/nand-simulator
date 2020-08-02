@@ -1,5 +1,4 @@
-import {Circuit} from "./Circuit.ts";
-import {ClockDesc} from "./types.ts";
+import {Circuit} from "../Circuit.ts";
 
 /**
  * Overrides the value of `node` to a clock with the given parameters
@@ -30,4 +29,12 @@ export class Clock {
     post() {
         this.circuit.setBitInFrontBuffer(this.node, this.nextValue!)
     }
+}
+
+export interface ClockDesc {
+    type: "CLOCK";
+    period: number;
+    duty: number;
+    offset: number;
+    node: number;
 }

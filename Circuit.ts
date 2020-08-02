@@ -2,10 +2,10 @@ import {
     CircuitLayout,
     Device
 } from "./types.ts";
-import {DebugReader} from "./DebugReader.ts";
-import {Clock} from "./Clock.ts";
-import {Const} from "./Const.ts";
-import {Step} from "./Step.ts";
+import {DebugReader} from "./devices/DebugReader.ts";
+import {Clock} from "./devices/Clock.ts";
+import {Const} from "./devices/Const.ts";
+import {Step} from "./devices/Step.ts";
 
 /**
  * Create a simulation of NAND gates, with some special devices

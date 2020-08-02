@@ -1,5 +1,5 @@
-import {Circuit} from "./Circuit.ts";
-import {StepDesc} from "./types.ts";
+import {Circuit} from "../Circuit.ts";
+import {StepDesc} from "../types.ts";
 
 /**
  * Set node to a step function. If current time is below time value is initial, otherwise the opposite

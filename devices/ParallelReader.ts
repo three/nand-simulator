@@ -1,4 +1,4 @@
-import {Circuit} from "./Circuit.ts";
+import {Circuit} from "../Circuit.ts";
 
 /**
  * Read byte from device.inputNodes on positive clock edges when readyNode is high, and output to stdout

@@ -1,5 +1,5 @@
-import {Circuit} from "./Circuit.ts";
-import {ConstDesc} from "./types.ts";
+import {Circuit} from "../Circuit.ts";
+import {ConstDesc} from "../types.ts";
 
 /**
  * Override the value of node to high or low

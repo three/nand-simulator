@@ -1,4 +1,7 @@
-import {Const} from "./Const.ts";
+import {Const} from "./devices/Const.ts";
+import {ClockDesc} from "./devices/Clock.ts";
+import {ParallelReaderDesc} from "./devices/ParallelReader.ts";
+import {ParallelWriterDesc} from "./devices/ParallelWriter.ts";
 
 export interface CircuitLayout {
     size: number;
@@ -10,19 +13,13 @@ export type DeviceDescription =
     DebugReaderDesc |
     ClockDesc |
     ConstDesc |
-    StepDesc;
+    StepDesc |
+    ParallelReaderDesc |
+    ParallelWriterDesc;
 
 export interface DebugReaderDesc {
     type: "DEBUG_READER";
     nodes: number[];
-}
-
-export interface ClockDesc {
-    type: "CLOCK";
-    period: number;
-    duty: number;
-    offset: number;
-    node: number;
 }
 
 export interface ConstDesc {
